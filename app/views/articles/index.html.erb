@@ -1,0 +1,10 @@
+<center><h1>Articles</h1></center>
+  <ol start="1">
+  <% @articles.each do |article| %>
+    <li><%= link_to "#{article.title}", article_path(article), method: :get %> <br> <%= link_to "Edit", edit_article_path(article) %> <%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></p></li>
+      <br>
+<% end %>
+</ol>
+  <form action="/articles/new">
+    <input type="submit" value="New Article">
+  </form>
